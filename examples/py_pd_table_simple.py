@@ -33,6 +33,7 @@ import requests
 url = 'https://beyondmercury.com/cslab/sampletable/'
 
 dfCount = pd.read_html(requests.get(url, headers = {'User-agent': 'Mozilla/5.0'}).text)
+# get the 0th table on the page
 df = dfCount[0]
 
 df.to_csv('./sampletable.csv')
